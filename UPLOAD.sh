@@ -31,4 +31,4 @@ printf "Upload complete!\n"
 printf "Average item upload time: %s seconds.\n" "$avg"
 printf "Total time: %s minutes.\n" "$totalm"
 printf "Total time: %s seconds.\n" "$total"
-sleep 15m
+sleep 30m
