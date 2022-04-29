@@ -1,0 +1,3 @@
+- Please change directory in CONVERT.bat and UPLOAD.sh to your directory 
+- Create "output" folder (case sensitive) in the main folder 
+- Before each run, please change the table name in config.js to your DynamoDB table name
