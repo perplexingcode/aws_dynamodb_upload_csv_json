@@ -33,6 +33,8 @@ line="------------------------"
 printf "%s\n" "$line"
 printf "Upload completed!\n"
 printf "%s packages ~%s items uploaded\n" "$pack" "$items"
+printf "%s packages ~%s items uploaded\n" "$pack" "$items" >> upload_log.txt
 printf "Average package upload time: %s seconds.\n" "$avg"
+printf "Total time: %s minutes (%s seconds).\n" "$totalm" "$total"
 printf "Total time: %s minutes (%s seconds).\n" "$totalm" "$total" >> upload_log.txt
 sleep 30m
