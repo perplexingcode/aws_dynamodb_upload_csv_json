@@ -1,4 +1,4 @@
 - Copy input.csv into the main folder
 - Make sure the "output" folder was created in the main folder
-- Run CONVERT.bat to convert input file to multiple json file, each json file contains 25 items, the result files are in output folder
+- Run CONVERT.bat to convert input file to multiple json files, each json file contains 25 items, the result files are in output folder
 - Run UPLOAD.sh to upload all items to DynamoDB
