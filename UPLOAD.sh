@@ -20,7 +20,7 @@ start_time=$(date +%s)
 end_time=$(date +%s)
 elapsed=$(( end_time - start_time ))
 elapsedx=$(( end_time - start_timet ))
-elapsedt=$(( elapsed/60 ))
+elapsedt=$(( elapsedx/60 ))
 printf "upload time: %s sec   time elapsed: %s min\n" "$elapsed" "$elapsedt"
 done
 #Finish
