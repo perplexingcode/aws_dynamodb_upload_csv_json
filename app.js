@@ -1,5 +1,5 @@
 const importCsv = require("csvtojson");
-const { tableName, partition_key, field_name } = require("./config");
+const { tableName, uuid_key, field_name } = require("./config");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 const _ = require("lodash");
@@ -18,8 +18,10 @@ let items;
       if (typeof keys[i] == "number") {
         type = "N";
       }
-      items[k][partition_key] = { S: uuidv4() };
-      items[k][`field_name`] = { S: field_name };
+      items[k][uuid_key] = { S: uuidv4() };
+      if (field_name) {
+        items[k][`field_name`] = { S: field_name };
+      }
       items[k][`${keys[i]}`] = { [`${type}`]: items[k][`${keys[i]}`] };
     }
     finalItems.push({
@@ -42,4 +44,11 @@ let items;
   if (finalItems.length % chunksize != 0) {
     console.log(`Exported ${finalItems.length} items.`);
   }
+  const sleep = (ms = 15000) => new Promise((r) => setTimeout(r, ms));
+  sleep();
+  console.log(`
+---------------------------
+Conversion completed!
+Run UPLOAD.SH to upload file to DynamoDB. Check output folder to make sure the table name is correct.
+  `);
 })();
